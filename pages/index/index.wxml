@@ -19,6 +19,6 @@
     <view class="container-error" hidden="{{isRule}}">
         <text class="text-des">您没有操作权限</text>
         <text class="text-phone">联系：400-919999</text>
-        <button class="btn-retry">点击重试</button>
+        <button class="btn-retry" bindtap="tryAgain">点击重试</button>
     </view>
 </view>

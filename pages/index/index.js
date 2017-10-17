@@ -46,5 +46,41 @@ Page({
      */
     goToOrderList(e){
         app.WxService.navigateTo('/pages/order/list/index')
-    }
+    },
+
+    /**
+     * 点击重试
+     */
+    tryAgain(e){
+        this.getUserLogin(app.WxService.getStorageSync('mobile'))
+    },
+
+    /**
+     *用户登录 登录权限验证
+     */
+    getUserLogin(mobile){
+        var that = this
+        util.showBusy('正在登录...')
+        app.HttpService.isRule({
+            phone: mobile,
+        }).then(res => {
+            const data = res.data
+            console.log(data)
+            if (data.code == 0) {
+                util.showSuccess(data.message)
+                that.setStorageSyncData(data.data.storePhone, data.data.storeName, data.data.storeId)
+            } else {
+                util.showModel('登录失败', data.message);
+                console.log('request fail', data.message);
+            }
+        })
+    },
+    /**
+     * 保存用户信息
+     */
+    setStorageSyncData(mobile, storeName, storeId){
+        App.WxService.setStorageSync('mobile', mobile)
+        App.WxService.setStorageSync('storeName', storeName)
+        App.WxService.setStorageSync('storeId', storeId)
+    },
 })

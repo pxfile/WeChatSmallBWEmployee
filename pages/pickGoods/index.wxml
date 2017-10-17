@@ -43,6 +43,7 @@
                     </view>
                 </view>
             </view>
+            <view class="line"></view>
         </block>
     </view>
     <!--总价-->

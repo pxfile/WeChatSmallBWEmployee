@@ -38,7 +38,7 @@ Page({
             console.log(data)
             if (data.code == 0) {
                 that.setData({
-                    orderTime: data.data.orderId,
+                    orderTime: data.data.orderTime,
                     orderId: data.data.orderId,
                     totalPrice: data.data.totalPrice,
                     goodsList: data.data.goodsList,

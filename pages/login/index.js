@@ -17,6 +17,7 @@ Page({
     //设置参数值，要使用this.setData({}）方法
     loginBtnClick(a) {
         console.log(a)
+        App.WxService.setStorageSync('mobile', this.data.phoneNumber)
         this.getUserLogin(this.data.phoneNumber)
     },
     /**

@@ -14,12 +14,12 @@ Page({
     onShow() {
     },
     bindload(e) {
-        setTimeout(App.WxService.getStorageSync('mobile') ? this.goIndex : this.goLogin, 3000)
+        setTimeout(App.WxService.getStorageSync('storeId') ? this.goIndex : this.goLogin, 3000)
     },
     goIndex() {
         App.WxService.redirectTo('/pages/index/index')
     },
     goLogin() {
-        App.WxService.redirectTo('/pages/login/index')
+        App.WxService.redirectTo('/pages/sweepQrCode/index')
     },
 })
