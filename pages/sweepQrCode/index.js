@@ -7,7 +7,7 @@ Page({
         scanCode: '',
     },
 
-    onLoad(option) {
+    onLoad() {
         // 允许从相机和相册扫码
         var that = this
         wx.scanCode({

@@ -20,6 +20,6 @@ Page({
         App.WxService.redirectTo('/pages/index/index')
     },
     goLogin() {
-        App.WxService.redirectTo('/pages/sweepQrCode/index')
+        App.WxService.redirectTo('/pages/login/index')
     },
 })
