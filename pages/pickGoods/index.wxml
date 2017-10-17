@@ -17,15 +17,16 @@
             <text class="address-text">温馨提示：请前往以下自提点取货</text>
             <view class="address-des">
                 <image src="../../../assets/images/iconfont-addr-default.png" class="address-icon"/>
-                <text class="address-text">自提时间\t\t\t\t\t\t</text>
-                <text class='address-text'>2017-08-31{{orderTime}}</text>
+                <text class="time-text">自提时间\t\t\t\t\t\t</text>
+                <text class='time-text'>2017-08-31{{orderTime}}</text>
             </view>
-            <view>天津市北辰区海吉星农贸批发市场{{goods_detail.storeAddress}}</view>
-            <view>
+            <view class="info-text">天津市北辰区海吉星农贸批发市场{{goods_detail.storeAddress}}</view>
+            <view class="info-text">
                 <text>店长：李小姐{{goods_detail.storeManagerName}}\t\t\t\t\t\t</text>
                 <text>联系电话：400-9199{{goods_detail.storePhone}}</text>
             </view>
         </view>
+        <view class="line"></view>
     </view>
     <!--订单列表-->
     <view class="goods-container">

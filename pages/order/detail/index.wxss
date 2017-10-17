@@ -1,0 +1,131 @@
+.container {
+    width: 100%;
+}
+
+.top-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    color: #333333;
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.detail-message {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.detail-message .detail-icon {
+    margin-right: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+}
+
+.detail-message .detail-phone {
+    color: #333;
+    font-size: 14px;
+}
+
+.detail-title {
+    font-size: 25px;
+    color: #333;
+    margin: 2px 0;
+}
+
+.detail-text {
+    margin-top: 5px;
+    color: #999999;
+    font-size: 14px;
+}
+
+.goods-container {
+    margin-bottom: 55px;
+}
+
+.goods-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 1px;
+    background-color: #ffffff;
+    padding: 10px 15px 5px 15px;
+}
+
+.goods-item-left {
+    width: 50px;
+    height: 50px;
+}
+
+.goods-image {
+    width: 50px;
+    height: 50px;
+}
+
+.goods-item-title {
+    font-size: 13px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /*限制在一个块元素显示的文本的行数*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #666;
+    margin-left: 10px;
+    width: 65%;
+    line-height: 1.5;
+    float: left;
+}
+
+.goods-item-title-num {
+    font-size: 13px;
+    word-break: break-all;
+    display: -webkit-box;
+    -webkit-line-clamp: 1; /*限制在一个块元素显示的文本的行数*/
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    color: #666;
+    margin-left: 5px;
+    margin-right: 5px;
+    line-height: 1.5;
+    float: right;
+}
+
+.goods-item-bottom {
+    line-height: 1.5;
+    width: 100%;
+    padding-top: 5px;
+    float: left;
+}
+
+.goods-item-bottom-btn {
+    margin-bottom: 5px;
+}
+
+.goods-item-expiration-days {
+    color: #f00;
+    text-align: center;
+    width: auto;
+    margin-left: 15px;
+    float: left;
+}
+
+.goods-item-num {
+    color: #999;
+    margin-left: 5px;
+    text-align: center;
+    width: auto;
+    margin-right: 5px;
+    float: right;
+}

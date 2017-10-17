@@ -110,6 +110,7 @@
     width: 100%;
     background-color: white;
     flex-direction: column;
+    font-size: 14px;
 }
 
 .address-sub-container {
@@ -129,6 +130,15 @@
 
 .address-text {
     color: #333;
+}
+
+.time-text {
+    font-size: 13px;
+}
+
+.info-text {
+    font-size: 13px;
+    color: #999999;
 }
 
 .goods-container {
@@ -274,4 +284,10 @@
     font-size: 14px;
     margin-left: 15px;
     color: #868686;
+}
+
+.line {
+    background-color: #f2f2f2;
+    height: 1px;
+    width: 100%;
 }

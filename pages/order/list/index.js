@@ -17,10 +17,11 @@ Page({
      * 选择时间
      * @param e
      */
-    bindDateChange: function (e) {
+    bindDateChange(e) {
         this.setData({
             date: e.detail.value
         })
+        this.fetchListData(false)
     },
 
     onLoad() {
@@ -92,19 +93,5 @@ Page({
     fetchListDataMore() {
         if (this.data.list.length === 0) return
         this.fetchListData(true);
-    },
-
-    //选择自提时间
-    selectPickTime(e){
-        this.setData({
-            showPickView: true,
-        })
-    },
-
-    //事件处理函数
-    clickPickBtn(e){
-        wx.navigateTo({
-            url: '../confirm/index?id=' + e.target.dataset.id
-        })
     },
 })

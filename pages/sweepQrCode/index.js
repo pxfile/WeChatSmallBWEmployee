@@ -6,6 +6,6 @@ Page({
      * 订单列表
      */
     goToPickGoods(e){
-        app.WxService.redirectTo('/pages/pickGoods/index?scanCode='+'CAf641b18ebeeb4c528beaf99c2e301e01')
+        app.WxService.navigateTo('/pages/pickGoods/index?scanCode='+'CAf641b18ebeeb4c528beaf99c2e301e01')
     }
 })

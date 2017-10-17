@@ -21,19 +21,21 @@
     <!--订单列表-->
     <view class="goods-container">
         <block wx:for="{{list}}" wx:for-index="index" wx:key="index">
-            <view class="goods-item">
-                <view class="goods-item-left">
-                    <image src="{{item.userPic}}" class="goods-image"/>
-                </view>
-                <view>
-                    <text class="goods-item-title">{{item.username}}-{{item.userPhone}}</text>
-                    <text class="goods-item-num">共{{item.orderSize}}件</text>
-                    <view class="goods-item-bottom">
-                        <text class="goods-item-expiration-days">核销时间：{{item.lastTime}}</text>
+            <navigator url="../detail/index?id={{item.orderId}}">
+                <view class="goods-item">
+                    <view class="goods-item-left">
+                        <image src="{{item.userPic}}" class="goods-image"/>
+                    </view>
+                    <view>
+                        <text class="goods-item-title">{{item.username}}-{{item.userPhone}}</text>
+                        <text class="goods-item-num">共{{item.orderSize}}件</text>
+                        <view class="goods-item-bottom">
+                            <text class="goods-item-expiration-days">核销时间：{{item.lastTime}}</text>
+                        </view>
                     </view>
                 </view>
-            </view>
-            <view class="line"></view>
+                <view class="line"></view>
+            </navigator>
         </block>
     </view>
 </view>

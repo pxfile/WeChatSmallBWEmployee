@@ -38,13 +38,13 @@ Page({
      * 扫码取款
      */
     sweepQRCode(e){
-        app.WxService.redirectTo('/pages/sweepQrCode/index')
+        app.WxService.navigateTo('/pages/sweepQrCode/index')
     },
 
     /**
      * 订单列表
      */
     goToOrderList(e){
-        app.WxService.redirectTo('/pages/order/list/index')
+        app.WxService.navigateTo('/pages/order/list/index')
     }
 })
