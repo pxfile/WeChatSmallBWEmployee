@@ -1,0 +1,28 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+    align-items: center;
+    width: 100%;
+    background-color: white;
+}
+
+.container-icon {
+    display: flex;
+    margin-top: 120px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.qr-icon {
+    width: 250px;
+    height: 230px;
+}
+
+.text-des {
+    color: #666666;
+    font-size: 15px;
+    margin-top: 20px;
+}

@@ -1,0 +1,6 @@
+<view class="container">
+    <view class="container-icon" bindtap="goToPickGoods">
+        <image src="../../../assets/images/iconfont-sweep-qr-code.png" class="qr-icon"/>
+        <text class="text-des">扫码取货</text>
+    </view>
+</view>

@@ -1,0 +1,23 @@
+{
+  "pages": [
+    "pages/start/index",
+    "pages/login/index",
+    "pages/index/index",
+    "pages/pickGoods/index",
+    "pages/order/list/index",
+    "pages/order/detail/index",
+    "pages/sweepQrCode/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTitleText": "百威员工",
+    "navigationBarTextStyle": "white",
+    "enablePullDownRefresh": false
+  },
+  "networkTimeout": {
+    "request": 120000,
+    "downloadFile": 120000
+  }
+}

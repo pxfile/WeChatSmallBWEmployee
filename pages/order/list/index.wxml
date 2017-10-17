@@ -1,0 +1,39 @@
+<import src="../../common/prompt.wxml"/>
+<template is="prompt" data="{{ prompt }}"/>
+<view class="container" hidden="{{ !prompt.hidden }}">
+    <!--选择时间-->
+    <picker mode="date" value="{{date}}" start="2017-01-01" end="2017-12-31" bindchange="bindDateChange" class="pick-time">
+        <view class="time-container-top" bindchange="bindDateChange">
+            <view class="time-container">
+                <view class="time-sub-container">
+                    <view class="time-des">
+                        <image src="../../../assets/images/iconfont-calendar.png" class="calendar-icon"/>
+                        <text class="time-text">选择时间</text>
+                    </view>
+                </view>
+            </view>
+            <image src="../../../assets/images/iconfont-arrow-right.png" class="arrow-icon"/>
+        </view>
+    </picker>
+    <view class="time-view">
+        <text class="time-view-text">{{date}}</text>
+    </view>
+    <!--订单列表-->
+    <view class="goods-container">
+        <block wx:for="{{list}}" wx:for-index="index" wx:key="index">
+            <view class="goods-item">
+                <view class="goods-item-left">
+                    <image src="{{item.userPic}}" class="goods-image"/>
+                </view>
+                <view>
+                    <text class="goods-item-title">{{item.username}}-{{item.userPhone}}</text>
+                    <text class="goods-item-num">共{{item.orderSize}}件</text>
+                    <view class="goods-item-bottom">
+                        <text class="goods-item-expiration-days">核销时间：{{item.lastTime}}</text>
+                    </view>
+                </view>
+            </view>
+            <view class="line"></view>
+        </block>
+    </view>
+</view>

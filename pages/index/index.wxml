@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+    <view class="userinfo">
+        <image class="userinfo-avatar" wx:if="{{userInfo.avatarUrl}}" src="{{ userInfo.avatarUrl }}" background-size="cover"/>
+        <view class="userinfo-info">
+            <view class="userinfo-order">
+                <text class="userinfo-nickname-phone">{{ userInfo.nickName }}</text>
+                <text class="order_btn" hidden="{{!isRule}}" bindtap="goToOrderList">订单列表</text>
+            </view>
+            <text class="userinfo-nickname-phone">{{ phone }}</text>
+        </view>
+    </view>
+
+    <view class="container-icon" hidden="{{!isRule}}">
+        <image src="../../../assets/images/iconfont-sweep-qr-code.png" class="qr-icon"/>
+        <button class="btn-qr" bindtap="sweepQRCode">扫码取货</button>
+    </view>
+
+    <view class="container-error" hidden="{{isRule}}">
+        <text class="text-des">您没有操作权限</text>
+        <text class="text-phone">联系：400-919999</text>
+        <button class="btn-retry">点击重试</button>
+    </view>
+</view>

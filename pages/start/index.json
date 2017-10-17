@@ -1,0 +1,6 @@
+{
+	"navigationBarBackgroundColor": "#ff0000",
+    "navigationBarTitleText": "欢迎您的到来",
+    "disableScroll": "true",
+  "enablePullDownRefresh": false
+}
