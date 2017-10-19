@@ -2,7 +2,7 @@
     <view class="container">
         <view class="sub-container-code">
             <text class="text-view">手机号</text>
-            <input type="number" bindinput="phoneInput"/>
+            <input type="number" bindinput="phoneInput" value="{{phoneNumber}}"/>
         </view>
         <view class="hint-text">温馨提示：未注册的手机号，登录时将自动注册，且代表您已同意《用户注册协议</view>
         <view class="btn-login-view">

@@ -17,6 +17,14 @@ Page({
     //设置参数值，要使用this.setData({}）方法
     loginBtnClick(a) {
         console.log(a)
+        var regMobile = /^1\d{10}$/;
+        if (!regMobile.test(this.data.phoneNumber)) {
+            util.showModel('温馨提示', '手机号有误，请重新操作！');
+            this.setData({
+                phoneNumber: ''
+            })
+            return;
+        }
         App.WxService.setStorageSync('mobile', this.data.phoneNumber)
         this.getUserLogin(this.data.phoneNumber)
     },

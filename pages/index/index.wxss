@@ -5,7 +5,7 @@
     height: 100%;
     align-items: center;
     width: 100%;
-    background-color: white;
+    background-color: #FFFFFF;
 }
 
 .userinfo {
@@ -47,7 +47,7 @@
     height: 24px;
     line-height: 24px;
     text-align: center;
-    background-color: white;
+    background-color: #FFFFFF;
     color: #ff0000;
     font-size: 12px;
     border-radius: 9px;

@@ -17,7 +17,7 @@ Page({
 
     onLoad(option) {
         this.setData({
-            scanCode: option.scanCode,
+            scanCode: decodeURIComponent(option.scanCode),
             storeId: app.WxService.getStorageSync('storeId'),
             addressText: '待取货'
         })
@@ -90,6 +90,6 @@ Page({
      * 跳转订单详情
      */
     goToOrderDetail(){
-        app.WxService.navigateTo('/pages/order/detail/index?id=' + this.data.orderId + '&type=0')
+        app.WxService.navigateTo('/pages/order/detail/index?id=' + encodeURIComponent(this.data.orderId) + '&type=0')
     }
 })

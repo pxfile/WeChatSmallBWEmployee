@@ -2,7 +2,7 @@
 <template is="prompt" data="{{ prompt }}"/>
 <view class="container" hidden="{{ !prompt.hidden }}">
     <!--选择时间-->
-    <picker mode="date" value="{{date}}" start="2017-01-01" end="2017-12-31" bindchange="bindDateChange" class="pick-time">
+    <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange" class="pick-time">
         <view class="time-container-top" bindchange="bindDateChange">
             <view class="time-container">
                 <view class="time-sub-container">

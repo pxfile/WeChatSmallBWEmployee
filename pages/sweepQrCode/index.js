@@ -34,6 +34,6 @@ Page({
      * 订单列表
      */
     goToPickGoods(){
-        app.WxService.navigateTo('/pages/pickGoods/index?scanCode=' + this.data.scanCode)
+        app.WxService.navigateTo('/pages/pickGoods/index?scanCode=' + encodeURIComponent(this.data.scanCode))
     }
 })

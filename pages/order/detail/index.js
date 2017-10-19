@@ -13,7 +13,7 @@ Page({
 
     onLoad(option) {
         this.setData({
-            id: option.id,
+            id: decodeURIComponent(option.id),
         })
         this.fetchListData(this.data.id)
     },

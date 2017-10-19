@@ -11,6 +11,8 @@ Page({
             icon: '../../../assets/images/iconfont-empty.png',
         },
         date: '',
+        startDate: '',
+        endDate: '',
     },
 
     /**
@@ -27,6 +29,8 @@ Page({
     onLoad() {
         this.setData({
             date: util.formatDate(new Date()),
+            startDate: util.formatDate(new Date()),
+            endDate: '2017-12-31',
         })
         this.fetchListData(false);
     },

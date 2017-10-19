@@ -140,7 +140,7 @@
 
 .goods-container {
     margin-bottom: 90px;
-    background-color: white;
+    background-color: #ffffff;
     height: 100%;
 }
 
