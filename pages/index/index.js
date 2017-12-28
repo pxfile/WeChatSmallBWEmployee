@@ -9,9 +9,10 @@ Page({
         isRule: false,
     },
     onLoad() {
+        util.showBusy('正在加载...')
         try {
             this.setData({
-                phone: app.WxService.getStorageSync('mobile'),
+                phone: '店长手机号：'+app.WxService.getStorageSync('mobile'),
                 isRule: app.WxService.getStorageSync('isRule')
             })
         } catch (e) {
@@ -64,7 +65,7 @@ Page({
     },
 
     /**
-     * 订单列表
+     * 取货
      */
     goToPickGoods(){
         app.WxService.navigateTo('/pages/pickGoods/index?scanCode=' + encodeURIComponent(this.data.scanCode))
