@@ -18,12 +18,12 @@
             <view class="address-des">
                 <image src="../../assets/images/iconfont-addr-default.png" class="address-icon"/>
                 <text class="time-text">自提时间\t\t\t\t\t\t</text>
-                <text class='time-text'>2017-08-31{{orderTime}}</text>
+                <text class='time-text'>{{goods_detail.pickTime}}</text>
             </view>
-            <view class="info-text">天津市北辰区海吉星农贸批发市场{{goods_detail.storeAddress}}</view>
+            <view class="info-text">{{goods_detail.storeAddress}}</view>
             <view class="info-text">
-                <text>店长：李小姐{{goods_detail.storeManagerName}}\t\t\t\t\t\t</text>
-                <text>联系电话：400-9199{{goods_detail.storePhone}}</text>
+                <text>店长：{{goods_detail.storeManagerName}}\t\t\t\t\t\t</text>
+                <text>联系电话：{{goods_detail.storePhone}}</text>
             </view>
         </view>
         <view class="line"></view>

@@ -30,7 +30,7 @@ Page({
         this.setData({
             date: util.formatDate(new Date()),
             startDate: util.formatDate(new Date()),
-            endDate: '2017-12-31',
+            endDate: '2020-12-31',
         })
         this.fetchListData(false);
     },
@@ -63,10 +63,8 @@ Page({
         var that = this
         app.HttpService.storeOrderComplete({
             storeId: app.WxService.getStorageSync('storeId'),
-            // startTime: that.data.date + " 0:0:0",
-            // endTime: that.data.date + " 23:0:0"
-            startTime: '2017-8-30 0:0:0',
-            endTime: '2017-10-16:0:0:0'
+            startTime: that.data.date + " 0:0:0",
+            endTime: that.data.date + " 23:0:0"
         }).then(res => {
             const data = res.data
             console.log(data)
@@ -98,4 +96,10 @@ Page({
         if (this.data.list.length === 0) return
         this.fetchListData(true);
     },
+    /**
+     * 跳转订单详情
+     */
+    goToOrderDetail(e){
+        app.WxService.navigateTo('/pages/order/detail/index?id=' + encodeURIComponent(e.currentTarget.dataset.id) + '&type=0')
+    }
 })

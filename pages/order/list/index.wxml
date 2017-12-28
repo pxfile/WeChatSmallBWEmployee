@@ -1,6 +1,5 @@
 <import src="../../common/prompt.wxml"/>
-<template is="prompt" data="{{ prompt }}"/>
-<view class="container" hidden="{{ !prompt.hidden }}">
+<view class="container">
     <!--选择时间-->
     <picker mode="date" value="{{date}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange" class="pick-time">
         <view class="time-container-top" bindchange="bindDateChange">
@@ -15,27 +14,26 @@
             <image src="../../../assets/images/iconfont-arrow-right.png" class="arrow-icon"/>
         </view>
     </picker>
-    <view class="time-view">
+    <template is="prompt" data="{{ prompt }}"/>
+    <view class="time-view" hidden="{{ !prompt.hidden }}">
         <text class="time-view-text">{{date}}</text>
     </view>
     <!--订单列表-->
-    <view class="goods-container">
+    <view class="goods-container" hidden="{{ !prompt.hidden }}">
         <block wx:for="{{list}}" wx:for-index="index" wx:key="index">
-            <navigator url="../detail/index?id={{item.orderId}}">
-                <view class="goods-item">
-                    <view class="goods-item-left">
-                        <image src="{{item.userPic}}" class="goods-image"/>
-                    </view>
-                    <view>
-                        <text class="goods-item-title">{{item.username}}-{{item.userPhone}}</text>
-                        <text class="goods-item-num">共{{item.orderSize}}件</text>
-                        <view class="goods-item-bottom">
-                            <text class="goods-item-expiration-days">核销时间：{{item.lastTime}}</text>
-                        </view>
+            <view class="goods-item" bindtap="goToOrderDetail" data-id="{{item.orderId}}">
+                <view class="goods-item-left">
+                    <image src="{{item.userPic}}" class="goods-image"/>
+                </view>
+                <view>
+                    <text class="goods-item-title">{{item.username}}-{{item.userPhone}}</text>
+                    <text class="goods-item-num">共{{item.orderSize}}件</text>
+                    <view class="goods-item-bottom">
+                        <text class="goods-item-expiration-days">核销时间：{{item.lastTime}}</text>
                     </view>
                 </view>
-                <view class="line"></view>
-            </navigator>
+            </view>
+            <view class="line"></view>
         </block>
     </view>
 </view>

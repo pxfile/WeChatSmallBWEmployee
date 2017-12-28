@@ -4,7 +4,7 @@ var app = getApp()
 var util = require('../../../utils/util.js')
 Page({
     data: {
-        payMoney:0,
+        payMoney: 0,
         goods_detail: {},
         prompt: {
             hidden: !0,
@@ -34,7 +34,7 @@ Page({
             if (data.code == 0) {
                 that.setData({
                     goods_detail: data.data,
-                    payMoney:util.fMoney(data.data.payMoney,2)
+                    payMoney: util.fMoney(data.data.payMoney, 2)
                 })
             } else {
                 util.showModel('加载失败', data.message);
