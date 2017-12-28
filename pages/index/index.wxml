@@ -11,12 +11,12 @@
         </view>
     </view>
 
-    <view class="container-icon" hidden="{{!isRule}}">
-        <image src="../../../assets/images/iconfont-sweep-qr-code.png" class="qr-icon"/>
+    <view class="container-icon" wx:if="{{isRule}}">
+        <image src="../../assets/images/iconfont-sweep-qr-code.png" class="qr-icon"/>
         <button class="btn-qr" bindtap="sweepQRCode">扫码取货</button>
     </view>
 
-    <view class="container-error" hidden="{{isRule}}">
+    <view class="container-error" wx:if="{{!isRule}}">
         <text class="text-des">您没有操作权限</text>
         <text class="text-phone">联系：400-919999</text>
         <button class="btn-retry" bindtap="tryAgain">点击重试</button>

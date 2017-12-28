@@ -9,11 +9,16 @@ Page({
         isRule: false,
     },
     onLoad() {
-        this.setData({
-            phone: app.WxService.getStorageSync('mobile'),
-            isRule: app.WxService.getStorageSync('storeId').length > 0
-        })
+        try {
+            this.setData({
+                phone: app.WxService.getStorageSync('mobile'),
+                isRule: app.WxService.getStorageSync('isRule')
+            })
+        } catch (e) {
+            // Do something when catch error
+        }
         this.getUserInfo()
+        console.log("isRule-->" + app.WxService.getStorageSync('isRule') + 'storeId-->' + app.WxService.getStorageSync('storeId'))
     },
     getUserInfo() {
         const userInfo = app.globalData.userInfo
@@ -38,7 +43,32 @@ Page({
      * 扫码取款
      */
     sweepQRCode(e){
-        app.WxService.navigateTo('/pages/sweepQrCode/index')
+        // 允许从相机和相册扫码
+        var that = this
+        wx.scanCode({
+            success: (res) => {
+                console.log('二维码：---》》' + JSON.stringify(res))
+                that.setData({
+                    scanCode: res.charSet,
+                })
+                that.goToPickGoods()
+            },
+            fail: (res)=> {
+                console.log('二维码：---》》' + JSON.stringify(res))
+            },
+            complete: ()=> {
+                that.setData({
+                    scanCode: 'CAf641b18ebeeb4c528beaf99c2e301e01',
+                })
+            }
+        })
+    },
+
+    /**
+     * 订单列表
+     */
+    goToPickGoods(){
+        app.WxService.navigateTo('/pages/pickGoods/index?scanCode=' + encodeURIComponent(this.data.scanCode))
     },
 
     /**
@@ -52,22 +82,25 @@ Page({
      * 点击重试
      */
     tryAgain(e){
-        this.getUserLogin(app.WxService.getStorageSync('mobile'))
+        this.getUserLogin(app.WxService.getStorageSync('weixin_code'))
     },
 
     /**
      *用户登录 登录权限验证
      */
-    getUserLogin(mobile){
+    getUserLogin(weixinCode){
         var that = this
         util.showBusy('正在登录...')
         app.HttpService.isRule({
-            phone: mobile,
+            weixinCode: weixinCode,
         }).then(res => {
             const data = res.data
             console.log(data)
             if (data.code == 0) {
                 util.showSuccess(data.message)
+                that.setData({
+                    isRule: data.data.storeId.length > 0
+                })
                 that.setStorageSyncData(data.data.storePhone, data.data.storeName, data.data.storeId)
             } else {
                 util.showModel('登录失败', data.message);
@@ -79,8 +112,12 @@ Page({
      * 保存用户信息
      */
     setStorageSyncData(mobile, storeName, storeId){
-        App.WxService.setStorageSync('mobile', mobile)
-        App.WxService.setStorageSync('storeName', storeName)
-        App.WxService.setStorageSync('storeId', storeId)
+        try {
+            App.WxService.setStorageSync('mobile', mobile)
+            App.WxService.setStorageSync('storeName', storeName)
+            App.WxService.setStorageSync('storeId', storeId)
+        } catch (e) {
+            console.log('setStorageSync failed')
+        }
     },
 })

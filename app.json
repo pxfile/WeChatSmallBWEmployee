@@ -1,12 +1,10 @@
 {
   "pages": [
-    "pages/start/index",
     "pages/login/index",
     "pages/index/index",
     "pages/pickGoods/index",
     "pages/order/list/index",
     "pages/order/detail/index",
-    "pages/sweepQrCode/index",
     "pages/logs/logs"
   ],
   "window": {

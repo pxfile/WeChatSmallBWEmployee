@@ -4,7 +4,7 @@
         <view class="address-container">
             <view class="address-sub-container">
                 <view class="address-des">
-                    <image src="../../../assets/images/iconfont-about.png" class="address-icon"/>
+                    <image src="../../assets/images/iconfont-about.png" class="address-icon"/>
                     <text class="address-text">{{addressText}}</text>
                 </view>
             </view>
@@ -16,7 +16,7 @@
         <view class="address-sub-container">
             <text class="address-text">温馨提示：请前往以下自提点取货</text>
             <view class="address-des">
-                <image src="../../../assets/images/iconfont-addr-default.png" class="address-icon"/>
+                <image src="../../assets/images/iconfont-addr-default.png" class="address-icon"/>
                 <text class="time-text">自提时间\t\t\t\t\t\t</text>
                 <text class='time-text'>2017-08-31{{orderTime}}</text>
             </view>
