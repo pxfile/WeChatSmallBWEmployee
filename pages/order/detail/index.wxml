@@ -7,7 +7,7 @@
             <image src="{{goods_detail.userPic}}" class="detail-icon"/>
             <text class="detail-phone">{{goods_detail.username}}-{{goods_detail.userPhone}}</text>
         </view>
-        <view class="detail-title">￥ {{goods_detail.payMoney}}</view>
+        <view class="detail-title">￥ {{payMoney}}</view>
         <view class="detail-text">{{goods_detail.orderState}}</view>
     </view>
     <!--订单列表-->

@@ -47,19 +47,18 @@ Page({
         var that = this
         wx.scanCode({
             success: (res) => {
-                console.log('二维码：---》》' + JSON.stringify(res))
+                console.log('二维码：----success---》》' + JSON.stringify(res))
                 that.setData({
-                    scanCode: res.charSet,
+                    scanCode: res.result,
                 })
                 that.goToPickGoods()
+                console.log("--result:" + res.result + "--scanType:" + res.scanType + "--charSet:" + res.charSet + "--path:" + res.path)
             },
             fail: (res)=> {
-                console.log('二维码：---》》' + JSON.stringify(res))
+                console.log('二维码：----fail----》》' + JSON.stringify(res))
             },
             complete: ()=> {
-                that.setData({
-                    scanCode: 'CAf641b18ebeeb4c528beaf99c2e301e01',
-                })
+                console.log('二维码：----complete----》》')
             }
         })
     },

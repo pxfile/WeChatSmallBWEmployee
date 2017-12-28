@@ -39,9 +39,9 @@ Page({
      */
     getUserLogin(weixinCode){
         var that = this
-        if (this.data.weixinCode.length == 0) {
-            util.showModel('温馨提示', '微信号不能为空！')
-        } else {
+        // if (weixinCode.length == 0) {
+        //     util.showModel('温馨提示', '微信号不能为空！')
+        // } else {
             util.showBusy('正在登录...')
             App.HttpService.isRule({
                 weixinCode: weixinCode,
@@ -58,7 +58,7 @@ Page({
                     console.log('request fail', data.message);
                 }
             })
-        }
+        // }
     },
     /**
      * 保存用户信息
