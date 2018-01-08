@@ -7,7 +7,7 @@
                 <view class="time-sub-container">
                     <view class="time-des">
                         <image src="../../../assets/images/iconfont-calendar.png" class="calendar-icon"/>
-                        <text class="time-text">选择时间</text>
+                        <text class="time-text">{{selectDate}}</text>
                     </view>
                 </view>
             </view>

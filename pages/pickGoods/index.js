@@ -90,6 +90,6 @@ Page({
      * 跳转订单详情
      */
     goToOrderDetail(){
-        app.WxService.navigateTo('/pages/order/detail/index?id=' + encodeURIComponent(this.data.orderId) + '&type=0')
+        app.WxService.redirectTo('/pages/order/detail/index?id=' + encodeURIComponent(this.data.orderId) + '&type=0')
     }
 })

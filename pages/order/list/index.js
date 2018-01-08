@@ -4,6 +4,7 @@ Page({
     data: {
         start_num: 0,
         list: [],
+        selectDate: '选择日期',
         onpulldownrefresh: '下拉刷新...',
         onreachbottom: '上拉加载更多...',
         prompt: {
@@ -21,7 +22,8 @@ Page({
      */
     bindDateChange(e) {
         this.setData({
-            date: e.detail.value
+            date: e.detail.value,
+            selectDate: e.detail.value
         })
         this.fetchListData(false)
     },
@@ -29,8 +31,8 @@ Page({
     onLoad() {
         this.setData({
             date: util.formatDate(new Date()),
-            startDate: util.formatDate(new Date()),
-            endDate: '2020-12-31',
+            startDate: '2017-01-01',
+            endDate: '2025-12-31',
         })
         this.fetchListData(false);
     },
