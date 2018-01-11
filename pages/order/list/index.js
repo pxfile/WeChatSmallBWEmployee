@@ -32,7 +32,7 @@ Page({
         this.setData({
             date: util.formatDate(new Date()),
             startDate: '2017-01-01',
-            endDate: '2025-12-31',
+            endDate: '2030-12-31',
         })
         this.fetchListData(false);
     },
