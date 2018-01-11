@@ -1,5 +1,6 @@
 .container {
     width: 100%;
+    overflow: hidden;
 }
 
 .top-container {
@@ -53,6 +54,8 @@
 
 .goods-container {
     margin-bottom: 55px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .goods-item {
@@ -62,6 +65,8 @@
     margin-bottom: 1px;
     background-color: #ffffff;
     padding: 10px 15px 5px 15px;
+    width: 100%;
+    overflow: hidden;
 }
 
 .goods-item-left {
